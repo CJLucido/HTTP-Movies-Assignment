@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 import SavedList from "./Movies/SavedList";
 import MovieList from "./Movies/MovieList";
 import Movie from "./Movies/Movie";
+import UpdateForm from "./components/Pages/UpdateForm"
 
 const App = () => {
   const [savedList, setSavedList] = useState([]);
@@ -21,6 +22,7 @@ const App = () => {
           return <Movie {...props} addToSavedList={addToSavedList} />;
         }}
       />
+      <Route path="update-movie/:id" component={UpdateForm}/>
     </>
   );
 };
@@ -28,3 +30,9 @@ const App = () => {
 export default App;
 
 //the last route is creating a route||path AND a Movie component for each individual object on props
+
+
+////////////////////////////////////
+
+//no link is yet established for UpdateForm but a route is (try not to use a link)
+
