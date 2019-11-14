@@ -46,3 +46,6 @@ export default class Movie extends React.Component {
     );
   }
 }
+
+//this creates an individual page for the movie information in the api associated with the passed in id. This is why it is managing it's own state, separate from the state of the rest of the app. It is managing its own state by using the API state
+// the save function is passed down from app. there it sets the state used by the savedList component

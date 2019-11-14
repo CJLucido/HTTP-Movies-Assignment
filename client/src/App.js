@@ -26,3 +26,5 @@ const App = () => {
 };
 
 export default App;
+
+//the last route is creating a route||path AND a Movie component for each individual object on props

@@ -28,6 +28,8 @@ export default class MovieList extends Component {
   }
 }
 
+//this shows the list on the endpoint
+
 function MovieDetails({ movie }) {
   return (
     <Link to={`/movies/${movie.id}`}>
@@ -35,3 +37,6 @@ function MovieDetails({ movie }) {
     </Link>
   );
 }
+
+
+//this creates a link to a MovieCard component that uses the list from the endpoint
