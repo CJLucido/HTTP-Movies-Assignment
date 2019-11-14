@@ -1,7 +1,7 @@
 import React , {useState} from 'react'
 import axios from 'axios'
 
-function UpdateForm(props){
+export default function UpdateForm(props){
 
     const [userInput, setUserInput] = useState({
         title: '',
@@ -35,8 +35,9 @@ function UpdateForm(props){
 
 
     return (
-
-            <div>
+       
+            <div style={{backgroundColor: "crimson"}}>
+            {console.log("something")}
                 <form onSubmit={handleSubmit}>
                     <label name='title'>Movie Title</label>
                     <input
@@ -46,7 +47,7 @@ function UpdateForm(props){
                     onChange={handleChange}
                 />
 
-                    <label name='title'>Movie Title</label>
+                    <label name='title'>Director</label>
                     <input
                     type="text"
                     name= "director"
@@ -54,7 +55,7 @@ function UpdateForm(props){
                     onChange={handleChange}
                 />
 
-                    <label name='title'>Movie Title</label>
+                    <label name='title'>Metascore</label>
                     <input
                     type="text"
                     name= "metascore"
@@ -62,7 +63,7 @@ function UpdateForm(props){
                     onChange={handleChange}
                 />
 
-                    <label name='title'>Movie Title</label>
+                    <label name='title'>Stars</label>
                     <input
                     type="text"
                     name= "stars"
@@ -80,4 +81,3 @@ function UpdateForm(props){
 }
 
 
-export default UpdateForm

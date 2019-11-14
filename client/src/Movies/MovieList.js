@@ -32,6 +32,7 @@ export default class MovieList extends Component {
         <Route exact path="update-movie/:id" render={(props)=>
           (<UpdateForm {...props} movies={this.state.movies}/>)
         } />
+        <div>WTFFFFFFFFf</div>
       </div>
     );
   }
