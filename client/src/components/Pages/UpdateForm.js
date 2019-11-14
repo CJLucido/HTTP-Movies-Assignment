@@ -16,12 +16,23 @@ function UpdateForm(props){
         setUserInput({...userInput, [e.target.name]: e.target.value})
     }
 
+    console.log(props.movies)
+
+    // useEffect(() => {
+
+    //     if(props.)
+    // })
+
     const handleSubmit = e => {
         e.preventDefault();
 
+        //put the current item on the endpoint that is associated with the given URL
+        // axios
+        //     .put(`http://localhost:5000/update-movie/${}`, item)
 
 
     }
+
 
     return (
 

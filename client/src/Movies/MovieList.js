@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import MovieCard from "./MovieCard";
+import UpdateForm from "../components/Pages/UpdateForm"
+
+
+
+
+
 export default class MovieList extends Component {
   constructor(props) {
     super(props);
@@ -23,6 +29,9 @@ export default class MovieList extends Component {
         {this.state.movies.map(movie => (
           <MovieDetails key={movie.id} movie={movie} />
         ))}
+        <Route exact path="update-movie/:id" render={(props)=>
+          (<UpdateForm {...props} movies={this.state.movies}/>)
+        } />
       </div>
     );
   }
@@ -39,4 +48,5 @@ function MovieDetails({ movie }) {
 }
 
 
-//this creates a link to a MovieCard component that uses the list from the endpoint
+//this creates a link to a Movie component that uses the list from the endpoint
+//the link appears with all the information outlined by the MovieCard component
