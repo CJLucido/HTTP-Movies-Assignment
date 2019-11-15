@@ -38,7 +38,7 @@ export default function UpdateForm(props){
         //put the current item on the endpoint that is associated with the given URL
         axios
             .put(`http://localhost:5000/api/movies/${userInput.id}`, userInput)
-            .then(res => console.log("this is response", res))
+            .then(res => console.log("this is response", res.data))
             .catch(err => console.log("this is err", err))
 
     }
