@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 import MovieCard from "./MovieCard";
+import { NavLink, Route, Link } from "react-router-dom";
+import UpdateForm from "../components/Pages/UpdateForm"
 
 
 export default class Movie extends React.Component {
@@ -33,6 +35,17 @@ export default class Movie extends React.Component {
     addToSavedList(this.state.movie);
   };
 
+  MovieChange() {
+
+    console.log(this.state.movie.id)
+
+  return (
+    <Link to={`/update-movie/${this.state.movie.id}`}>
+      <UpdateForm movie={this.state.movie.id} />
+    </Link>
+  );
+}
+
   render() {
     if (!this.state.movie) {
       return <div>Loading movie information...</div>;
@@ -44,11 +57,17 @@ export default class Movie extends React.Component {
         <div className="save-button" onClick={this.saveMovie}>
           Save
         </div>
-        <button onClick={()=> this.props.history.push(`/update-movie/${this.state.movie.id}`)}>Update This Movie!</button>
+ 
+        <button type="button" onClick={()=> this.MovieChange()}>Update This Movie!</button>
+
+      
       </div>
     );
   }
 }
+
+
+
 
 //this creates an individual page for the movie information in the api associated with the passed in id. This is why it is managing it's own state, separate from the state of the rest of the app. It is managing its own state by using the API state
 // the save function is passed down from app. there it sets the state used by the savedList component

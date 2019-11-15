@@ -36,8 +36,8 @@ export default function UpdateForm(props){
 
     return (
        
-            <div style={{backgroundColor: "crimson"}}>
-            {console.log("something")}
+            <div className="save-wrapper" style={{backgroundColor: "crimson"}}>
+       
                 <form onSubmit={handleSubmit}>
                     <label name='title'>Movie Title</label>
                     <input
