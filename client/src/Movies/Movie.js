@@ -64,9 +64,10 @@ function MovieChange({movie}) {
   // console.log(this.state.movie.id)
 
  return (
+ 
    <Link to={`/update-movie/${movie.id}`}>
      <h2>Update this Movie!</h2>
-    
+     
    </Link>
  );
 }

@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link, Route } from "react-router-dom";
 import MovieCard from "./MovieCard";
-import UpdateForm from "../components/Pages/UpdateForm"
-
-
 
 
 

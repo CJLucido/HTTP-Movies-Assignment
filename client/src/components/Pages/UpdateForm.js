@@ -12,10 +12,15 @@ export default function UpdateForm(props){
 
 
     const handleChange = e => {
-
-        setUserInput({...userInput, [e.target.name]: e.target.value})
+        e.persist();
+        let entry = e.target.value;
+        if(e.target.name === "stars"){
+            entry = (entry).split()
+        }
+        setUserInput({...userInput, [e.target.name]: entry})
     }
 
+    console.log(userInput.stars)
     // useEffect(() => {
 
     //     if(props.)
