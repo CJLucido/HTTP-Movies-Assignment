@@ -35,17 +35,7 @@ export default class Movie extends React.Component {
     addToSavedList(this.state.movie);
   };
 
-  MovieChange() {
-
-   // console.log(this.state.movie.id)
-
-  return (
-    <Link to={`/update-movie/${this.state.movie.id}`}>
-      <h2>Update this Movie!</h2>
-      <UpdateForm movie={this.state.movie.id} />
-    </Link>
-  );
-}
+ 
 
   render() {
     if (!this.state.movie) {
@@ -58,9 +48,9 @@ export default class Movie extends React.Component {
         <div className="save-button" onClick={this.saveMovie}>
           Save
         </div>
-          {
-            this.MovieChange()
-          }
+          
+            <MovieChange movie={this.state.movie}/>
+          
        
 
       
@@ -69,7 +59,17 @@ export default class Movie extends React.Component {
   }
 }
 
+function MovieChange({movie}) {
 
+  // console.log(this.state.movie.id)
+
+ return (
+   <Link to={`/update-movie/${movie.id}`}>
+     <h2>Update this Movie!</h2>
+    
+   </Link>
+ );
+}
 
 
 //this creates an individual page for the movie information in the api associated with the passed in id. This is why it is managing it's own state, separate from the state of the rest of the app. It is managing its own state by using the API state

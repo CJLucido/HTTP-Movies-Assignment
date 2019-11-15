@@ -16,8 +16,6 @@ export default function UpdateForm(props){
         setUserInput({...userInput, [e.target.name]: e.target.value})
     }
 
-    console.log(props.movies)
-
     // useEffect(() => {
 
     //     if(props.)
