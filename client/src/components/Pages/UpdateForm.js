@@ -1,4 +1,4 @@
-import React , {useState} from 'react'
+import React , {useState, useEffect} from 'react'
 import axios from 'axios'
 
 export default function UpdateForm(props){
@@ -20,19 +20,26 @@ export default function UpdateForm(props){
         setUserInput({...userInput, [e.target.name]: entry})
     }
 
-    console.log(userInput.stars)
-    // useEffect(() => {
+   
+    useEffect(() => {
 
-    //     if(props.)
-    // })
+        if(props.movies.length > 0){
+        const newMovie = props.movies.find(movie => 
+            `${movie.id}` === props.match.params.id
+            )
+
+            setUserInput(newMovie)
+    }
+    }, [props.movies, props.match.params.id])
 
     const handleSubmit = e => {
         e.preventDefault();
 
         //put the current item on the endpoint that is associated with the given URL
-        // axios
-        //     .put(`http://localhost:5000/update-movie/${}`, item)
-
+        axios
+            .put(`http://localhost:5000/api/movies/${userInput.id}`, userInput)
+            .then(res => console.log("this is response", res))
+            .catch(err => console.log("this is err", err))
 
     }
 
@@ -76,7 +83,7 @@ export default function UpdateForm(props){
 
             
 
-                <button type="button" >Update Movie!</button>
+                <button >Update Movie!</button>
                 </form>
             </div>
 
