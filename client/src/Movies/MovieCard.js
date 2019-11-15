@@ -23,3 +23,5 @@ const MovieCard = props => {
 };
 
 export default MovieCard;
+
+//this creates our info cards of each object in  the endpoint array

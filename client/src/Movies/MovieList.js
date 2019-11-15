@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import MovieCard from "./MovieCard";
+
+
+
 export default class MovieList extends Component {
   constructor(props) {
     super(props);
@@ -23,10 +26,14 @@ export default class MovieList extends Component {
         {this.state.movies.map(movie => (
           <MovieDetails key={movie.id} movie={movie} />
         ))}
+
+       
       </div>
     );
   }
 }
+
+//this shows the list on the endpoint
 
 function MovieDetails({ movie }) {
   return (
@@ -35,3 +42,7 @@ function MovieDetails({ movie }) {
     </Link>
   );
 }
+
+
+//this creates a link to a Movie component that uses the list from the endpoint
+//the link appears with all the information outlined by the MovieCard component
