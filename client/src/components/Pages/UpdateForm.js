@@ -83,7 +83,7 @@ export default function UpdateForm(props){
 
             
 
-                <button >Update Movie!</button>
+                <button onClick={() => props.history.push('/')}>Update Movie!</button>
                 </form>
             </div>
 
@@ -91,3 +91,4 @@ export default function UpdateForm(props){
 }
 
 
+//by getting the state from the list on the api (items on App) the form is always able to find what it needs to update instead of trying to update undefined inputs!
